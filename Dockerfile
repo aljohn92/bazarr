@@ -1,11 +1,11 @@
 FROM  linuxserver/bazarr
 RUN \
- echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies-pip \
+ echo "**** install subscleaner ****" && \
+ apk add --no-cache --virtual=build-dependencies-subcl \
 	py3-pip && \
-RUN   pip3 install --no-cache-dir -U \
+ pip3 install --no-cache-dir -U \
           pysrt \
           chardet \
           https://github.com/aljohn92/subscleaner/archive/master.zip && \
-apk del --purge \
-	build-dependencies-pip
+ apk del --purge \
+	build-dependencies-subcl
